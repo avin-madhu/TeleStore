@@ -382,15 +382,13 @@ class TelegramStorage(QMainWindow):
         QMessageBox.information(self, "File Removed", f"File {file_name} removed from database")
     
     def on_folder_clicked(self, index):
-        # When a folder is clicked, update the file list
+        # When a folder is clicked here, update the file listt!
         item = self.folder_model.itemFromIndex(index)
         
         if item:
-            # Clear the file list
+            # Clearing the file list
             self.file_list.clear()
-            
-            # For simplicity, we'll just show all files in the database
-            # In a real implementation, you'd associate files with folders
+
             for file in self.files_db:
                 self.file_list.addItem(file["file_name"])
     
